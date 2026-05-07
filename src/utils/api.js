@@ -10,13 +10,13 @@ export const submitContact = async (contactData) => {
     console.error("Local database save error:", error);
   }
 
-  // 2. Send real email using FormSubmit with the USER's verified secret token!
+  // 2. Send real email using FormSubmit with lowercase keys so autoresponse finds the recipient email!
   try {
     await axios.post("https://formsubmit.co/ajax/1380c2af5592674a175f7163304321cc", {
-      "Candidate Name": contactData.name,
-      "Email Address": contactData.email,
-      "Contact Number": contactData.contact,
-      "Application Message": contactData.message,
+      name: contactData.name,
+      email: contactData.email,
+      contact: contactData.contact,
+      message: contactData.message,
       _subject: `New Job Registration: ${contactData.name} - Madhuram Jobs`,
       _template: "box", // Beautiful premium box HTML layout
       _autoresponse: `Hello ${contactData.name},\n\nThank you for contacting Madhuram Jobs! We have received your query regarding our latest openings and will get back to you shortly.\n\nBest regards,\nTeam Madhuram Jobs`
