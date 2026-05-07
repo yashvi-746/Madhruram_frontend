@@ -1,10 +1,12 @@
 :root {
   --primary-blue: #2563eb;
   --light-blue: #eff6ff;
+  --dark-blue: #1e3a8a;
   --glass-bg: rgba(255, 255, 255, 0.2);
   --glass-border: rgba(255, 255, 255, 0.4);
   --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
   --primary-orange: #f97316;
+  --light-orange: #ff9f43;
   --text-color: #1e3a8a;
   --light-text: #64748b;
 }

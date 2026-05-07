@@ -24,8 +24,9 @@
 }
 
 .hero-logo {
-  height: 100px;
-  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 100px;
   margin-bottom: 1.5rem;
   object-fit: contain;
   mix-blend-mode: multiply; /* Removes white background */
@@ -85,7 +86,15 @@
 }
 
 @media (max-width: 768px) {
-  .hero-section { height: 450px; }
+  .hero-section {
+    height: auto;
+    min-height: 450px;
+    padding: 3rem 0;
+  }
+  .hero-logo {
+    max-height: 60px;
+    margin-bottom: 1rem;
+  }
   .glass-card { padding: 2rem; margin: 0 20px; }
   .glass-card h1 { font-size: 2rem; }
   .glass-card p { font-size: 1rem; }
