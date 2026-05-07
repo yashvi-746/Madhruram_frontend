@@ -19,7 +19,7 @@ export const submitContact = async (contactData) => {
       message: contactData.message,
       _subject: `New Job Registration: ${contactData.name} - Madhuram Jobs`,
       _template: "box", // Beautiful premium box HTML layout
-      _autoresponse: `Hello ${contactData.name},\n\nThank you for contacting Madhuram Jobs! We have received your query regarding our latest openings and will get back to you shortly.\n\nBest regards,\nTeam Madhuram Jobs`
+      _autoresponse: `Thank you for contacting Madhuram Jobs! We have received your query regarding our latest openings and will get back to you shortly.`
     });
   } catch (emailError) {
     console.error("FormSubmit email dispatch error:", emailError);
