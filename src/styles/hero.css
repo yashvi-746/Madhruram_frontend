@@ -28,7 +28,6 @@
   width: auto;
   margin-bottom: 1.5rem;
   object-fit: contain;
-  filter: contrast(1.1) brightness(1.05); /* Enhance white for better blending */
   mix-blend-mode: multiply; /* Removes white background */
 }
 
@@ -44,7 +43,6 @@
   box-shadow: var(--glass-shadow);
   animation: slideUp 0.8s ease-out;
   z-index: 1; /* Ensure card is above overlay */
-  isolation: isolate; /* Fix for blend mode */
 }
 
 @keyframes slideUp {
