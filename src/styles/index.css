@@ -11,6 +11,16 @@
   --light-text: #64748b;
 }
 
+body.dark-mode {
+  --light-blue: #0f172a;
+  --dark-blue: #020617;
+  --text-color: #f8fafc;
+  --light-text: #94a3b8;
+  --glass-bg: rgba(15, 23, 42, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -32,4 +42,53 @@ body,
 #root {
   height: 100%;
   width: 100%;
+}
+
+/* Global Dark Mode Overrides */
+body.dark-mode .service-card,
+body.dark-mode .why-choose-us-card,
+body.dark-mode .job-card,
+body.dark-mode .detail-section,
+body.dark-mode .search-filter-card,
+body.dark-mode .form-container,
+body.dark-mode .no-jobs-found,
+body.dark-mode .mv-card {
+  background-color: #1e293b !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  color: #f8fafc !important;
+}
+
+body.dark-mode .service-card h3,
+body.dark-mode .why-choose-us-card h3,
+body.dark-mode .job-title,
+body.dark-mode .detail-section h2,
+body.dark-mode .search-filter-card label,
+body.dark-mode .form-group label,
+body.dark-mode .no-jobs-found h3,
+body.dark-mode .role-chip {
+  color: #f8fafc !important;
+}
+
+body.dark-mode .role-chip {
+  background-color: #334155 !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .filter-group select,
+body.dark-mode .search-bar,
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+  background-color: #334155 !important;
+  color: #f8fafc !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.dark-mode .navbar-logo .logo-img,
+body.dark-mode .hero-logo,
+body.dark-mode .footer-logo-img {
+  mix-blend-mode: normal !important;
+  filter: brightness(0.9) contrast(1.1);
+  background-color: white !important;
+  border-radius: 8px;
+  padding: 4px;
 }
