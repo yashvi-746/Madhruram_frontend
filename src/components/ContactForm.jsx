@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { submitContact } from "../utils/api";
 import "../styles/form.css";
 
 const ContactForm = () => {
+  const [searchParams] = useSearchParams();
+  const jobTitle = searchParams.get("job");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     contact: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (jobTitle) {
+      setFormData((prev) => ({
+        ...prev,
+        message: `Hi, I am interested in applying for the "${decodeURIComponent(jobTitle)}" position. Please review my application.`,
+      }));
+    }
+  }, [jobTitle]);
 
   const [errors, setErrors] = useState({});
   const [loading, setLoading] = useState(false);
