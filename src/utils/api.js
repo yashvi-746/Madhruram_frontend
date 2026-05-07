@@ -20,6 +20,10 @@ export const submitContact = async (contactData) => {
           contact_number: contactData.contact,
           message: contactData.message,
           reply_to: contactData.email,
+          to_name: contactData.name,
+          to_email: contactData.email,
+          user_name: contactData.name,
+          user_email: contactData.email,
         },
         publicKey
       );
@@ -33,6 +37,11 @@ export const submitContact = async (contactData) => {
           {
             to_name: contactData.name,
             to_email: contactData.email,
+            user_name: contactData.name,
+            user_email: contactData.email,
+            from_name: contactData.name,
+            from_email: contactData.email,
+            message: contactData.message,
           },
           publicKey
         );
