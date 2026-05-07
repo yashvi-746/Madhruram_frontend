@@ -27,7 +27,6 @@ const ContactForm = () => {
   const [loading, setLoading] = useState(false);
   const [successMessage, setSuccessMessage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [previewUrl, setPreviewUrl] = useState("");
 
   const validateForm = () => {
     const newErrors = {};
@@ -89,11 +88,6 @@ const ContactForm = () => {
     try {
       const response = await submitContact(formData);
       setSuccessMessage(response.message || "Message sent successfully!");
-      if (response.previewUrl) {
-        setPreviewUrl(response.previewUrl);
-      } else {
-        setPreviewUrl("");
-      }
       setFormData({
         name: "",
         email: "",
@@ -102,11 +96,10 @@ const ContactForm = () => {
       });
       setErrors({});
 
-      // Clear success message after 15 seconds if preview is available, otherwise 5 seconds
+      // Clear success message after 5 seconds
       setTimeout(() => {
         setSuccessMessage("");
-        setPreviewUrl("");
-      }, response.previewUrl ? 15000 : 5000);
+      }, 5000);
     } catch (error) {
       const errorMsg = error.message || "Failed to send message. Please try again.";
       setErrorMessage(errorMsg);
@@ -127,31 +120,7 @@ const ContactForm = () => {
       </h2>
 
       {successMessage && (
-        <div className="message success-message">
-          <div style={{ marginBottom: previewUrl ? "0.5rem" : "0" }}>{successMessage}</div>
-          {previewUrl && (
-            <div style={{ marginTop: "0.5rem" }}>
-              <a 
-                href={previewUrl} 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                style={{ 
-                  display: "inline-block", 
-                  backgroundColor: "#2563eb", 
-                  color: "#ffffff", 
-                  padding: "0.4rem 0.8rem", 
-                  borderRadius: "6px", 
-                  textDecoration: "none", 
-                  fontWeight: "bold",
-                  fontSize: "0.85rem",
-                  transition: "background-color 0.2s"
-                }}
-              >
-                Click here to Preview Sent Email ✉️
-              </a>
-            </div>
-          )}
-        </div>
+        <div className="message success-message">{successMessage}</div>
       )}
       {errorMessage && <div className="message error-alert">{errorMessage}</div>}
 
