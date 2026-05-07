@@ -1,0 +1,94 @@
+.hero-section {
+  position: relative;
+  height: 600px;
+  width: 100%;
+  background-color: var(--light-blue);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 58, 138, 0.4); /* Soft blue overlay to make text pop */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-logo {
+  height: 100px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+  filter: contrast(1.1) brightness(1.05); /* Enhance white for better blending */
+  mix-blend-mode: multiply; /* Removes white background */
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 24px;
+  padding: 3rem;
+  max-width: 800px;
+  text-align: center;
+  box-shadow: var(--glass-shadow);
+  animation: slideUp 0.8s ease-out;
+  z-index: 1; /* Ensure card is above overlay */
+  isolation: isolate; /* Fix for blend mode */
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.glass-card h1 {
+  font-size: 3.5rem;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.glass-card p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.cta-button {
+  background: var(--primary-orange);
+  color: white;
+  padding: 1rem 2.5rem;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(249, 115, 22, 0.3);
+  display: inline-block;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(249, 115, 22, 0.4);
+  background: #ea580c;
+}
+
+@media (max-width: 768px) {
+  .hero-section { height: 450px; }
+  .glass-card { padding: 2rem; margin: 0 20px; }
+  .glass-card h1 { font-size: 2rem; }
+  .glass-card p { font-size: 1rem; }
+}
