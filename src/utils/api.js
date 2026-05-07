@@ -69,7 +69,10 @@ export const submitContact = async (contactData) => {
   // Fallback to local server API
   try {
     const response = await axios.post(`${API_URL}/api/contact`, contactData);
-    return response.data;
+    return {
+      ...response.data,
+      emailJSConfigured: false
+    };
   } catch (error) {
     throw error.response?.data || error.message;
   }

@@ -87,7 +87,11 @@ const ContactForm = () => {
 
     try {
       const response = await submitContact(formData);
-      setSuccessMessage(response.message || "Message sent successfully!");
+      if (response.emailJSConfigured === false) {
+        setSuccessMessage("Message saved successfully! ⚠️ Note: Greeting email was not sent because EmailJS credentials are not configured in client/.env.");
+      } else {
+        setSuccessMessage(response.message || "Message sent successfully!");
+      }
       setFormData({
         name: "",
         email: "",
