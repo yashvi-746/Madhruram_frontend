@@ -89,12 +89,6 @@
   gap: 1.25rem;
 }
 
-.navbar-center-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 1.5rem;
-}
 
 .theme-toggle {
   background: transparent;
@@ -187,13 +181,5 @@
 
   .navbar-logo .logo-img {
     height: 55px;
-  }
-
-  .navbar-center-toggle {
-    margin: 0;
-    flex-grow: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 }
