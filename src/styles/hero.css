@@ -24,10 +24,11 @@
 }
 
 .hero-logo {
+  display: block !important;
+  margin: 0 auto 1.5rem auto !important;
   max-width: 100%;
   height: auto;
   max-height: 100px;
-  margin-bottom: 1.5rem;
   object-fit: contain;
   mix-blend-mode: multiply; /* Removes white background */
 }
