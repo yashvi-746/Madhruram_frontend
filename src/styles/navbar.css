@@ -83,11 +83,6 @@
   color: var(--primary-blue);
 }
 
-.nav-theme-toggle-li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 
 .navbar-controls {
   display: flex;
@@ -177,7 +172,7 @@
   }
 
   .nav-links.open {
-    max-height: 450px;
+    max-height: 400px;
     padding: 2rem 0;
   }
 
@@ -187,13 +182,5 @@
 
   .navbar-logo .logo-img {
     height: 55px;
-  }
-
-  .nav-theme-toggle-li {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 0.5rem;
   }
 }

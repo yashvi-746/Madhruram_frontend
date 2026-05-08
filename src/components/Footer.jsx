@@ -35,6 +35,9 @@ const Footer = () => {
               <li>
                 <Link to="/contact">Contact</Link>
               </li>
+              <li>
+                <Link to="/admin" style={{ opacity: 0.65 }}>Admin Portal</Link>
+              </li>
             </ul>
           </div>
           <div className="footer-section">

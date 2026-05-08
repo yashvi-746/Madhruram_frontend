@@ -81,24 +81,6 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              to="/admin"
-              className={({ isActive }) => (isActive ? "active" : "")}
-              onClick={closeMenu}
-            >
-              Admin
-            </NavLink>
-          </li>
-          <li className="nav-theme-toggle-li">
-            <button 
-              className="theme-toggle" 
-              onClick={toggleDarkMode}
-              aria-label="Toggle light/dark theme"
-            >
-              {isDarkMode ? "☀️" : "🌙"}
-            </button>
-          </li>
         </ul>
 
         <div className="navbar-controls">
@@ -110,6 +92,14 @@ const Navbar = () => {
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
             <span className="hamburger-bar"></span>
+          </button>
+
+          <button 
+            className="theme-toggle" 
+            onClick={toggleDarkMode}
+            aria-label="Toggle light/dark theme"
+          >
+            {isDarkMode ? "☀️" : "🌙"}
           </button>
         </div>
       </div>

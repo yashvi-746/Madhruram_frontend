@@ -224,12 +224,10 @@ const Admin = () => {
   };
 
   const handleDeleteClick = (id) => {
-    if (window.confirm("Are you sure you want to delete this job listing?")) {
-      const updatedJobs = jobs.filter((job) => job.id !== id);
-      setJobs(updatedJobs);
-      localStorage.setItem("madhuram_jobs", JSON.stringify(updatedJobs));
-      showToast("Job listing deleted successfully!", "error");
-    }
+    const updatedJobs = jobs.filter((job) => job.id !== id);
+    setJobs(updatedJobs);
+    localStorage.setItem("madhuram_jobs", JSON.stringify(updatedJobs));
+    showToast("Job listing deleted successfully!", "error");
   };
 
   return (
