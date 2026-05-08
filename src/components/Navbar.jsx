@@ -35,6 +35,16 @@ const Navbar = () => {
           <img src={process.env.PUBLIC_URL + "/logo-full.jpg"} alt="Madhuram Jobs Logo" className="logo-img" />
         </NavLink>
 
+        <div className="navbar-center-toggle">
+          <button 
+            className="theme-toggle" 
+            onClick={toggleDarkMode}
+            aria-label="Toggle light/dark theme"
+          >
+            {isDarkMode ? "☀️" : "🌙"}
+          </button>
+        </div>
+
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           <li>
             <NavLink
@@ -81,27 +91,9 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
-          {/* Mobile Theme Toggle placed after Contact */}
-          <li className="mobile-theme-toggle-li">
-            <button 
-              className="theme-toggle-mobile" 
-              onClick={() => { toggleDarkMode(); closeMenu(); }}
-              aria-label="Toggle light/dark theme"
-            >
-              {isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
-            </button>
-          </li>
         </ul>
 
         <div className="navbar-controls">
-          <button 
-            className="theme-toggle-desktop" 
-            onClick={toggleDarkMode}
-            aria-label="Toggle light/dark theme"
-          >
-            {isDarkMode ? "☀️" : "🌙"}
-          </button>
-          
           <button 
             className={`menu-toggle ${isOpen ? "open" : ""}`} 
             onClick={toggleMenu}
