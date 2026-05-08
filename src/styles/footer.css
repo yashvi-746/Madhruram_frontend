@@ -53,7 +53,7 @@
 }
 
 .footer-section a:hover {
-  color: white;
+  color: var(--primary-orange);
   padding-left: 5px;
 }
 

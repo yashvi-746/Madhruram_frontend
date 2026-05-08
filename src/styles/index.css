@@ -9,6 +9,13 @@
   --light-orange: #ff9f43;
   --text-color: #1e3a8a;
   --light-text: #64748b;
+  --light-gray: #f1f5f9;
+  --dark-gray: #475569;
+  --navbar-bg: rgba(219, 234, 254, 0.92);
+  --navbar-border: rgba(147, 197, 253, 0.4);
+  --nav-links-mobile-bg: rgba(219, 234, 254, 0.98);
+  --card-bg: #ffffff;
+  --card-border: rgba(147, 197, 253, 0.15);
 }
 
 body.dark-mode {
@@ -19,6 +26,13 @@ body.dark-mode {
   --glass-bg: rgba(15, 23, 42, 0.6);
   --glass-border: rgba(255, 255, 255, 0.08);
   --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+  --light-gray: #1e293b;
+  --dark-gray: #94a3b8;
+  --navbar-bg: rgba(15, 23, 42, 0.92);
+  --navbar-border: rgba(255, 255, 255, 0.08);
+  --nav-links-mobile-bg: rgba(15, 23, 42, 0.98);
+  --card-bg: #1e293b;
+  --card-border: rgba(255, 255, 255, 0.08);
 }
 
 * {
@@ -40,8 +54,11 @@ body {
 html,
 body,
 #root {
-  height: 100%;
+  min-height: 100%;
   width: 100%;
+  background-color: var(--light-blue);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Global Dark Mode Overrides */
