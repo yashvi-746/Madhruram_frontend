@@ -81,11 +81,21 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
+          {/* Mobile Theme Toggle placed after Contact */}
+          <li className="mobile-theme-toggle-li">
+            <button 
+              className="theme-toggle-mobile" 
+              onClick={() => { toggleDarkMode(); closeMenu(); }}
+              aria-label="Toggle light/dark theme"
+            >
+              {isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode"}
+            </button>
+          </li>
         </ul>
 
         <div className="navbar-controls">
           <button 
-            className="theme-toggle" 
+            className="theme-toggle-desktop" 
             onClick={toggleDarkMode}
             aria-label="Toggle light/dark theme"
           >
