@@ -223,11 +223,22 @@ const Admin = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  const [deleteConfirmId, setDeleteConfirmId] = useState(null);
+
   const handleDeleteClick = (id) => {
-    const updatedJobs = jobs.filter((job) => job.id !== id);
+    setDeleteConfirmId(id);
+  };
+
+  const handleConfirmDelete = () => {
+    const updatedJobs = jobs.filter((job) => job.id !== deleteConfirmId);
     setJobs(updatedJobs);
     localStorage.setItem("madhuram_jobs", JSON.stringify(updatedJobs));
     showToast("Job listing deleted successfully!", "error");
+    setDeleteConfirmId(null);
+  };
+
+  const handleCancelDelete = () => {
+    setDeleteConfirmId(null);
   };
 
   return (
@@ -235,6 +246,23 @@ const Admin = () => {
       {toast.show && (
         <div className={`toast toast-${toast.type}`}>
           {toast.message}
+        </div>
+      )}
+
+      {deleteConfirmId && (
+        <div className="custom-modal-overlay">
+          <div className="custom-modal">
+            <h3>⚠️ Confirm Deletion</h3>
+            <p>Are you sure you want to delete this job listing? This action cannot be undone.</p>
+            <div className="custom-modal-actions">
+              <button type="button" className="confirm-btn" onClick={handleConfirmDelete}>
+                Yes, Delete
+              </button>
+              <button type="button" className="cancel-btn" onClick={handleCancelDelete}>
+                Cancel
+              </button>
+            </div>
+          </div>
         </div>
       )}
 
