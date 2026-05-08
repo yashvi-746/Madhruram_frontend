@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/jobs.css";
 
 const JOBS_DATA = [
@@ -117,6 +117,22 @@ const LOCATIONS = ["All", "Vadodara", "Mumbai", "Bangalore", "Pune", "Ahmedabad"
 const JOB_TYPES = ["All", "Full-time", "Contract"];
 
 const Jobs = () => {
+  const [jobs, setJobs] = useState(() => {
+    const saved = localStorage.getItem("madhuram_jobs");
+    if (saved) {
+      return JSON.parse(saved);
+    }
+    localStorage.setItem("madhuram_jobs", JSON.stringify(JOBS_DATA));
+    return JOBS_DATA;
+  });
+
+  useEffect(() => {
+    const saved = localStorage.getItem("madhuram_jobs");
+    if (saved) {
+      setJobs(JSON.parse(saved));
+    }
+  }, []);
+
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [selectedLocation, setSelectedLocation] = useState("All");
@@ -129,7 +145,7 @@ const Jobs = () => {
     setSelectedType("All");
   };
 
-  const filteredJobs = JOBS_DATA.filter((job) => {
+  const filteredJobs = jobs.filter((job) => {
     const matchesSearch =
       job.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       job.company.toLowerCase().includes(searchTerm.toLowerCase()) ||

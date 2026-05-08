@@ -8,6 +8,7 @@ import Services from "./pages/Services";
 import ServiceDetail from "./pages/ServiceDetail";
 import Jobs from "./pages/Jobs";
 import Contact from "./pages/Contact";
+import Admin from "./pages/Admin";
 import "./styles/index.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Route path="/services/:slug" element={<ServiceDetail />} />
             <Route path="/jobs" element={<Jobs />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
         </main>
         <Footer />
