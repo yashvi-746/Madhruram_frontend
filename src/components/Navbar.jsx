@@ -35,26 +35,6 @@ const Navbar = () => {
           <img src={process.env.PUBLIC_URL + "/logo-full.jpg"} alt="Madhuram Jobs Logo" className="logo-img" />
         </NavLink>
 
-        <div className="navbar-controls">
-          <button 
-            className="theme-toggle" 
-            onClick={toggleDarkMode}
-            aria-label="Toggle light/dark theme"
-          >
-            {isDarkMode ? "☀️" : "🌙"}
-          </button>
-          
-          <button 
-            className={`menu-toggle ${isOpen ? "open" : ""}`} 
-            onClick={toggleMenu}
-            aria-label="Toggle navigation menu"
-          >
-            <span className="hamburger-bar"></span>
-            <span className="hamburger-bar"></span>
-            <span className="hamburger-bar"></span>
-          </button>
-        </div>
-
         <ul className={`nav-links ${isOpen ? "open" : ""}`}>
           <li>
             <NavLink
@@ -102,6 +82,26 @@ const Navbar = () => {
             </NavLink>
           </li>
         </ul>
+
+        <div className="navbar-controls">
+          <button 
+            className="theme-toggle" 
+            onClick={toggleDarkMode}
+            aria-label="Toggle light/dark theme"
+          >
+            {isDarkMode ? "☀️" : "🌙"}
+          </button>
+          
+          <button 
+            className={`menu-toggle ${isOpen ? "open" : ""}`} 
+            onClick={toggleMenu}
+            aria-label="Toggle navigation menu"
+          >
+            <span className="hamburger-bar"></span>
+            <span className="hamburger-bar"></span>
+            <span className="hamburger-bar"></span>
+          </button>
+        </div>
       </div>
     </nav>
   );
