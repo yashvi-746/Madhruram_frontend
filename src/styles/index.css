@@ -18,7 +18,7 @@
   --card-border: rgba(147, 197, 253, 0.15);
 }
 
-body.dark-mode {
+.dark-mode {
   --light-blue: #0f172a;
   --dark-blue: #020617;
   --text-color: #f8fafc;
@@ -62,47 +62,47 @@ body,
 }
 
 /* Global Dark Mode Overrides */
-body.dark-mode .service-card,
-body.dark-mode .why-choose-us-card,
-body.dark-mode .job-card,
-body.dark-mode .detail-section,
-body.dark-mode .search-filter-card,
-body.dark-mode .form-container,
-body.dark-mode .no-jobs-found,
-body.dark-mode .mv-card {
+.dark-mode .service-card,
+.dark-mode .why-choose-us-card,
+.dark-mode .job-card,
+.dark-mode .detail-section,
+.dark-mode .search-filter-card,
+.dark-mode .form-container,
+.dark-mode .no-jobs-found,
+.dark-mode .mv-card {
   background-color: #1e293b !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
   color: #f8fafc !important;
 }
 
-body.dark-mode .service-card h3,
-body.dark-mode .why-choose-us-card h3,
-body.dark-mode .job-title,
-body.dark-mode .detail-section h2,
-body.dark-mode .search-filter-card label,
-body.dark-mode .form-group label,
-body.dark-mode .no-jobs-found h3,
-body.dark-mode .role-chip {
+.dark-mode .service-card h3,
+.dark-mode .why-choose-us-card h3,
+.dark-mode .job-title,
+.dark-mode .detail-section h2,
+.dark-mode .search-filter-card label,
+.dark-mode .form-group label,
+.dark-mode .no-jobs-found h3,
+.dark-mode .role-chip {
   color: #f8fafc !important;
 }
 
-body.dark-mode .role-chip {
+.dark-mode .role-chip {
   background-color: #334155 !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-body.dark-mode .filter-group select,
-body.dark-mode .search-bar,
-body.dark-mode .form-group input,
-body.dark-mode .form-group textarea {
+.dark-mode .filter-group select,
+.dark-mode .search-bar,
+.dark-mode .form-group input,
+.dark-mode .form-group textarea {
   background-color: #334155 !important;
   color: #f8fafc !important;
   border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
-body.dark-mode .navbar-logo .logo-img,
-body.dark-mode .hero-logo,
-body.dark-mode .footer-logo-img {
+.dark-mode .navbar-logo .logo-img,
+.dark-mode .hero-logo,
+.dark-mode .footer-logo-img {
   mix-blend-mode: normal !important;
   filter: brightness(0.9) contrast(1.1);
   background-color: white !important;
