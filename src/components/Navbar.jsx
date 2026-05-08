@@ -81,6 +81,15 @@ const Navbar = () => {
               Contact
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              to="/admin"
+              className={({ isActive }) => (isActive ? "active" : "")}
+              onClick={closeMenu}
+            >
+              Admin
+            </NavLink>
+          </li>
         </ul>
 
         <div className="navbar-controls">
