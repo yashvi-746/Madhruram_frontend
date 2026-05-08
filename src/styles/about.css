@@ -54,6 +54,15 @@
   mix-blend-mode: multiply; /* Removes white background */
 }
 
+/* Dark Mode About Logo Override */
+.dark-mode .about-image img {
+  mix-blend-mode: normal;
+  background-color: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
 @media (max-width: 768px) {
   .about-content {
     grid-template-columns: 1fr;

@@ -184,3 +184,12 @@
     height: 55px;
   }
 }
+
+/* Dark Mode Logo Override */
+.dark-mode .navbar-logo .logo-img {
+  mix-blend-mode: normal;
+  background-color: white;
+  border-radius: 8px;
+  padding: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
